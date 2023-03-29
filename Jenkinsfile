@@ -56,10 +56,6 @@ pipeline{
             
             steps{
                 script{
-                   stage('Quality Gate'){
-            
-            steps{
-                script{
                    nexusArtifactUploader artifacts: 
                    [
                         [   artifactId: 'springboot', 
@@ -77,9 +73,7 @@ pipeline{
                 }
             }
         }
-                }
-            }
-        }
+                
     }   
         
 }
