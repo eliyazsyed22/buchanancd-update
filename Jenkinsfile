@@ -52,6 +52,34 @@ pipeline{
                 }
             }
         }
+        stage('Upload Artifact to Nexus Repo'){
+            
+            steps{
+                script{
+                   stage('Quality Gate'){
+            
+            steps{
+                script{
+                   nexusArtifactUploader artifacts: 
+                   [
+                        [   artifactId: 'springboot', 
+                            classifier: '', file: 'target/Uber.jar', 
+                            type: 'jar'
+                        ]
+                    ], 
+                    credentialsId: 'BT-nexus', 
+                    groupId: 'com.example', 
+                    nexusUrl: '13.232.37.213:8081', 
+                    nexusVersion: 'nexus3', 
+                    protocol: 'http', 
+                    repository: 'buchananrepo-release', 
+                    version: '1.0.0'
+                }
+            }
+        }
+                }
+            }
+        }
     }   
         
 }
