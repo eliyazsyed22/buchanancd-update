@@ -34,7 +34,7 @@ pipeline{
                 }
             }
         }
-        stage('Static code Analysis'){
+        /*stage('Static code Analysis'){
             
             steps{
                 script{
@@ -70,6 +70,14 @@ pipeline{
                     protocol: 'http', 
                     repository: 'buchananrepo-release', 
                     version: '1.0.0'
+                }
+            }
+        }*/
+        stage('Docker Image Build'){
+            
+            steps{
+                script{
+                   sh 'docker image build -t $JOB_NAME:V1.$BUILD_ID'
                 }
             }
         }
