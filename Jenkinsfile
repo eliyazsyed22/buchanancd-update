@@ -88,7 +88,7 @@ pipeline{
                 }
             }
         }
-        stage('Docker Image Build'){
+        stage('Elastic Container Registry Login'){
             
             steps{
                 script{
