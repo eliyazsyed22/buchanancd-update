@@ -1,6 +1,13 @@
 pipeline{
     
     agent any 
+
+    environment{
+        AWS_ACCOUNT_ID="p5u5p5h0"
+        AWS_DEFAULT_REGION="us-east-1"
+        IMAGE_REPO_NAME="buchananecr"
+        REPOSITORY_URI="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
+    }
     
     stages {
         
@@ -78,6 +85,14 @@ pipeline{
             steps{
                 script{
                    sh 'docker image build -t buchanan:v1.$BUILD_ID .'
+                }
+            }
+        }
+        stage('Docker Image Build'){
+            
+            steps{
+                script{
+                   sh 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/p5u5p5h0'
                 }
             }
         }
