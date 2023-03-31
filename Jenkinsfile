@@ -92,14 +92,18 @@ pipeline{
             
             steps{
                 script{
-                   sh 'docker image build -t buchanan:v1.$BUILD_ID .'
-                   sh 'docker build -t buchananecr:v1.$BUILD_ID .'
+                   //sh 'docker image build -t buchanan:v1.$BUILD_ID .'
+                   sh 'docker build -t buchananecr:latest .'
                    sh 'docker tag buchananecr:latest public.ecr.aws/p5u5p5h0/buchananecr:latest'
-                   sh 'docker push public.ecr.aws/p5u5p5h0/buchananecr:latest'
                 }
             }
         }
-       
-                   
+        stage('Docker Image Push to ECR'){
+
+            steps{
+                script{
+                   sh 'docker push public.ecr.aws/p5u5p5h0/buchananecr:latest'
+                }
+            }
+        }              
     }       
-}
