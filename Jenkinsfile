@@ -94,7 +94,7 @@ pipeline{
                 script{
                    //sh 'docker image build -t buchanan:v1.$BUILD_ID .'
                    sh 'docker build -t buchananecr:buchananlatest .'
-                   sh 'docker tag buchananecr:buchananlatest public.ecr.aws/p5u5p5h0/buchananecr:latest'
+                   sh 'docker tag buchananecr:buchananlatest public.ecr.aws/p5u5p5h0/buchananecr:buchananlatest'
                 }
             }
         }
