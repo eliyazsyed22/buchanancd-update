@@ -106,7 +106,7 @@ pipeline{
                 }
             }
         }  
-          stage('Eks Image Push to ECR'){
+          stage('K8s Deployment to EKS cluster'){
 
             steps{
                     withKubeConfig(caCertificate: '', 
