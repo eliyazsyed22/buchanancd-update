@@ -19,7 +19,7 @@ spec:
         image: nginx
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
           name: http
           protocol: TCP
 # service type loadbalancer       
@@ -36,7 +36,7 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: 8081
+    targetPort: 80
   type: LoadBalancer
   selector:
     app: springboot-app
