@@ -105,7 +105,21 @@ pipeline{
                    sh 'docker push public.ecr.aws/p5u5p5h0/buchananecr:buchananlatest'
                 }
             }
-        }              
+        }  
+          stage('Eks Image Push to ECR'){
+
+            steps{
+                    withKubeConfig(caCertificate: '', 
+                                   clusterName: '', 
+                                   contextName: '', 
+                                   credentialsId: 'btconfigeks', 
+                                   namespace: '', restrictKubeConfigAccess: false, 
+                                   serverUrl: '') 
+                                {
+                                    sh 'kubectl apply -f eks-deploy-k8s.yaml'
+                                }
+            }
+        }            
     }       
 
 }
