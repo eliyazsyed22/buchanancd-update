@@ -117,6 +117,7 @@ pipeline{
                                    serverUrl: '') 
                                 {
                                     sh 'kubectl apply -f eks-deploy-k8s.yaml'
+                                    sh 'kubectl apply -f eks-test-k8s.yaml'
                                 }
             }
         }            
