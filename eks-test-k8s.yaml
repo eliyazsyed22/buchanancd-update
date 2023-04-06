@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ak-angular-app-poc-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: ak-angular-app
