@@ -116,8 +116,8 @@ pipeline{
                                    namespace: '', restrictKubeConfigAccess: false, 
                                    serverUrl: '') 
                                 {
-                                    sh 'kubectl delete -f eks-deploy-k8s.yaml'
-                                    sh 'kubectl delete -f eks-test-k8s.yaml'
+                                    sh 'kubectl apply -f eks-deploy-k8s.yaml -n buchanan'
+                                    sh 'kubectl apply -f eks-test-k8s.yaml -n buchanan'
                                 }
             }
         }            
