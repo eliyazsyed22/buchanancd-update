@@ -115,10 +115,10 @@ pipeline{
                                    credentialsId: 'btconfigeks', 
                                    namespace: '', restrictKubeConfigAccess: false, 
                                    serverUrl: '') 
-                                {
-                                    sh 'kubectl delete -f eks-deploy-k8s.yaml -n buchanan'
-                                    sh 'kubectl delete -f eks-test-k8s.yaml -n buchanan'
-                                } 
+                                /*{
+                                    sh 'kubectl apply -f eks-deploy-k8s.yaml -n buchanan'
+                                    sh 'kubectl apply -f eks-test-k8s.yaml -n buchanan'
+                                }*/
             }
         }            
     }       
