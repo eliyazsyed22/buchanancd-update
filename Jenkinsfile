@@ -59,7 +59,7 @@ pipeline{
                 }
             }
         }
-        stage('Upload Artifact to Nexus Repo'){
+        /*stage('Upload Artifact to Nexus Repo'){
             
             steps{
                 script{
@@ -79,7 +79,7 @@ pipeline{
                     version: '1.0.0'
                 }
             }
-        }
+        }*/
          stage('Elastic Container Registry Login'){
             
             steps{
