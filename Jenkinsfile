@@ -3,6 +3,11 @@ pipeline{
 
     agent any
 
+    environment{
+        APP_NAME = "public.ecr.aws/p5u5p5h0/buchananecr"
+        IMAGE_TAG = "${BUILD_ID}"
+    }
+
     stages {
         
         stage('Update manifest file'){
@@ -10,6 +15,7 @@ pipeline{
                 steps{
                     script{
                             sh 'cat eks-deployment.yaml'
+                            sh "sed -i 's+public.ecr.aws/p5u5p5h0/buchananecr:v1.14.*+public.ecr.aws/p5u5p5h0/buchananecr:v1.14:${DOCKERTAG}+g' eks-deployment.yaml"
                         }
                     }
         }
