@@ -14,7 +14,7 @@ pipeline{
 
             steps{
                 script{
-                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
+                    withCredentials([string(credentialsId: 'githubpattoken', variable: 'gitcred')]) {
                         sh 'cat eks-deployment.yaml'
                         sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                         sh "cat eks-deployment.yaml"
@@ -33,4 +33,7 @@ pipeline{
             }
         }
     }       
+}
+withCredentials([string(credentialsId: 'githubpattoken', variable: 'gitcred')]) {
+    // some block
 }
