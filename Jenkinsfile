@@ -17,12 +17,13 @@ pipeline{
                             sh 'cat eks-deployment.yaml'
                             sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                             sh "cat eks-deployment.yaml"
-                            sh "git add ."
-                            //sh "git commit "
-                            sh "git pull origin main"
-                            sh "git config core.commentChar ";""
+                            sh "git config user.email eliyaz7134@gmail.com"
+                            sh "git config user.name eliyazsyed"
+                            sh "git add eks-deployment.yaml"
+                            //sh "git pull origin main"
+                            //sh "git config core.commentChar ";""
                             sh "git commit -m "Merge""
-                            sh "git push origin https://github.com/eliyazsyed22/buchanancd-update.git "
+                            sh "git push origin https://github.com/eliyazsyed22/buchanancd-update.git" main
                         }
                     }
         }
