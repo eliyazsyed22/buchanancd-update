@@ -26,7 +26,7 @@ pipeline{
                         //sh "git push --force https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/argocd-update-manifest.git HEAD:main"
                         //sh "git pull origin main"
                         //sh "git config core.commentChar ";""
-                        sh "git push origin main:https://github.com/eliyazsyed22/buchanancd-update.git"
+                        sh "git push --force origin main:https://github.com/eliyazsyed22/buchanancd-update.git"
                     }
                            
                 }
