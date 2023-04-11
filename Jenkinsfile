@@ -20,7 +20,7 @@ pipeline{
                             sh "git add ."
                             //sh "git commit "
                             sh "git pull origin main"
-                            sh "git pull --no-commit && git commit -m "Merge""
+                            sh "git commit -m "Merge""
                             sh "git push origin https://github.com/eliyazsyed22/buchanancd-update.git "
                         }
                     }
