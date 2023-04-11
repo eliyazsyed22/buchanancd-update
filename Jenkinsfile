@@ -15,7 +15,7 @@ pipeline{
                 steps{
                     script{
                             sh 'cat eks-deployment.yaml'
-                            sh "sed -i 's+public.ecr.aws/p5u5p5h0/buchananecr:v1.14.*+public.ecr.aws/p5u5p5h0/buchananecr:v1.14:${BUILD_ID}+${DOCKERTAG}+g' eks-deployment.yaml"
+                            sh "sed -i 's+public.ecr.aws/p5u5p5h0/buchananecr .*+public.ecr.aws/p5u5p5h0/buchananecr:${BUILD_ID}+${DOCKERTAG}+g' eks-deployment.yaml"
                             sh "cat eks-deployment.yaml"
                             sh "git add ."
                             //sh "git commit "
