@@ -23,7 +23,7 @@ pipeline{
                             //sh "git pull origin main"
                             //sh "git config core.commentChar ";""
                             sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
-                            sh "git push origin https://github.com/eliyazsyed22/buchanancd-update.git"
+                            sh "git push origin"
                         }
                     }
         }
