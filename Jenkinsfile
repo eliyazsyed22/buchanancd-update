@@ -15,11 +15,11 @@ pipeline{
                 steps{
                     script{
                             sh 'cat eks-deployment.yaml'
-                            sh "sed -i 's+public.ecr.aws/p5u5p5h0/buchananecr:v1.14.*+public.ecr.aws/p5u5p5h0/buchananecr:v1.14:${DOCKERTAG}+g' eks-deployment.yaml"
+                            sh "sed -i 's+public.ecr.aws/p5u5p5h0/buchananecr:v1.14.*+public.ecr.aws/p5u5p5h0/buchananecr:v1.14:${BUILD_ID}+${DOCKERTAG}+g' eks-deployment.yaml"
                             sh "cat eks-deployment.yaml"
                             sh "git add ."
                             //sh "git commit "
-                            sh "git branch -M HEAD"
+                            sh "git checkout -b main && git pull origin main"
                             sh "git pull --no-commit && git commit -m "Merge""
                             sh "git push origin https://github.com/eliyazsyed22/buchanancd-update.git "
                         }
