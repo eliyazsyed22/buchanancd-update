@@ -18,7 +18,7 @@ pipeline{
                             sh "sed -i 's+public.ecr.aws/p5u5p5h0/buchananecr:v1.14.*+public.ecr.aws/p5u5p5h0/buchananecr:v1.14:${DOCKERTAG}+g' eks-deployment.yaml"
                             sh "cat eks-deployment.yaml"
                             sh "git add ."
-                            sh "git commit -a -m "commit from jenkinsjob""
+                            sh "git commit "
                             sh "git branch -M main"
                             sh "git push origin https://github.com/eliyazsyed22/buchanancd-update.git "
                         }
