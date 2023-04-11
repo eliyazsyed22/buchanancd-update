@@ -22,7 +22,7 @@ pipeline{
                             sh "git add eks-deployment.yaml"
                             sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
                             //sh "git branch -M main"
-                            sh "git remote add origin https://github.com/eliyazsyed22/buchanancd-update.git"
+                            //sh "git remote add origin https://github.com/eliyazsyed22/buchanancd-update.git"
                             sh "git push -u origin main"
                             //sh "git pull origin main"
                             //sh "git config core.commentChar ";""
