@@ -23,18 +23,15 @@ pipeline{
                         sh "git add eks-deployment.yaml"
                         sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
                         //sh "git remote add origin https://github.com/eliyazsyed22/buchanancd-update.git"
-                        sh "git push --force https://{eliyazsyed22}:{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}@github.com/eliyazsyed22/buchanancd-update.git HEAD:main"
+                        //sh "git push --force https://{eliyazsyed22}:{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}@github.com/eliyazsyed22/buchanancd-update.git HEAD:main"
                         //sh "git pull origin main"
                         //sh "git config core.commentChar ";""
                         //sh "git remote add origin git@github.com:eliyazsyed22/buchanancd-update.git"
-                        //sh "git push https://github.com/eliyazsyed22/buchanancd-update.git main"
+                        sh "git push https://github.com/eliyazsyed22/buchanancd-update.git main"
                     }
                            
                 }
             }
         }
     }       
-}
-withCredentials([string(credentialsId: 'githubpattoken', variable: 'gitcred')]) {
-    // some block
 }
