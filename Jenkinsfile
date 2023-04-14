@@ -21,7 +21,7 @@ pipeline{
                         sh "git config user.email eliyaz7134@gmail.com"
                         sh "git config user.name eliyazsyed"
                         sh "git branch -a"
-                        sh "git checkout main"
+                        //sh "git checkout main"
                         sh "git add eks-deployment.yaml"
                         sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
                         sh "git remote set-url origin github.com/eliyazsyed22/buchanancd-update.git"
