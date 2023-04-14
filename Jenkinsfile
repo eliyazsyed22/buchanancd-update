@@ -32,7 +32,7 @@ pipeline{
                         //sh "git push --force https://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@github.com/eliyazsyed22/buchanancd-update.git HEAD:main"
                         //sh "git pull origin main"
                         //sh "git push main origin https://github.com/eliyazsyed22/buchanancd-update.git"
-                        sh "git push -u origin main"
+                        sh "git push -u origin HEAD:main"
                     }
 
                            
