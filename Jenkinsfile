@@ -21,6 +21,8 @@ pipeline{
                         sh "git config user.email eliyaz7134@gmail.com"
                         sh "git config user.name eliyazsyed"
                         sh "git branch -a"
+                        sh "whoami"
+                        sh "echo $USER"
                         //sh "git checkout main"
                         sh "git add eks-deployment.yaml"
                         sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
