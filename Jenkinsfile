@@ -22,18 +22,17 @@ pipeline{
                         sh "git config user.name eliyazsyed"
                         sh "git add eks-deployment.yaml"
                         sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
-                        sh " git branch argoupdate 747a566"
-                        sh "git remote set-url origin https://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@github.com/eliyazsyed22/buchanancd-update.git"
+                        sh "git remote set-url origin https://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@github.com/eliyazsyed22/buchanancd-update.git"
                         sh "git remote -v"
                         sh "git branch -a"
-                        sh "git checkout argoupdate"
+                        sh "git checkout main"
                         sh "git branch -a"
                         //sh "git push --set-upstream origin main"
                         //sh "git remote add origin https://github.com/eliyazsyed22/buchanancd-update.git"
                         //sh "git push --force https://{eliyazsyed22}:{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}@github.com/eliyazsyed22/buchanancd-update.git HEAD:main"
                         //sh "git pull origin main"
                         //sh "git push main origin https://github.com/eliyazsyed22/buchanancd-update.git"
-                        sh "git push -u origin argoupdate"
+                        sh "git push -u origin main"
                     }
 
                            
