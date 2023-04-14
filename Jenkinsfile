@@ -22,7 +22,7 @@ pipeline{
                         sh "git config user.name eliyazsyed"
                         sh "git add eks-deployment.yaml"
                         sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
-                        sh "git remote set-url origin https://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@github.com/eliyazsyed22/buchanancd-update.git"
+                        sh "git remote set-url origin github.com/eliyazsyed22/buchanancd-update.git"
                         sh "git remote -v"
                         sh "git branch -a"
                         sh "git checkout main"
