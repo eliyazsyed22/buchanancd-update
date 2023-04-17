@@ -14,7 +14,6 @@ pipeline{
 
             steps{
                 script{
-                    withCredentials([gitUsernamePassword(credentialsId: 'newset', gitToolName: 'Default')]) {
                         sh 'cat eks-deployment.yaml'
                         sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                         sh "cat eks-deployment.yaml"
@@ -23,24 +22,13 @@ pipeline{
                         git config --global user.email "eliyazsyed22@gmail.com"
                         whoami
                         echo $USER
+                        git add eks-deployment.yaml
+                        git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'
                         """
-                        //sh "git checkout main"
-                        sh "git add eks-deployment.yaml"
-                        sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
-                        sh "git push https://github.com/eliyazsyed22/buchanancd-update.git main"
-                        //sh "git remote set-url origin github.com/eliyazsyed22/buchanancd-update.git"
-                        //sh "git remote -v"
-                        //sh "git branch -a"
-                        //sh "git push -u HEAD:main"
-                        //sh "git push --set-upstream origin main"
-                        //sh "git remote add origin https://github.com/eliyazsyed22/buchanancd-update.git"
-                        //sh "git push --force https://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@github.com/eliyazsyed22/buchanancd-update.git HEAD:main"
-                        //sh "git pull origin main"
-                        //sh "git push main origin https://github.com/eliyazsyed22/buchanancd-update.git"
-                        
-                    }
+                    withCredentials([gitUsernamePassword(credentialsId: 'testtoken', gitToolName: 'Default')]) {
+                                        sh "git push https://github.com/eliyazsyed22/buchanancd-update.git main"
+                                    }
 
-                           
                 }
             }
         }
