@@ -18,11 +18,12 @@ pipeline{
                         sh 'cat eks-deployment.yaml'
                         sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                         sh "cat eks-deployment.yaml"
-                        sh "git config --global user.name "eliyazsyed22""
-                        sh "git config --global user.email "eliyaz7134""
-                        //sh "git branch -a"
-                        sh "whoami"
-                        sh "echo $USER"
+                        sh """
+                        git config --global user.name "eliyazsyed22"
+                        git config --global user.email "eliyazsyed22@gmail.com"
+                        whoami
+                        echo $USER
+                        """
                         //sh "git checkout main"
                         sh "git add eks-deployment.yaml"
                         sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
