@@ -23,8 +23,8 @@ pipeline{
                         git config --global user.email "eliyazsyed22@gmail.com"
                         whoami
                         echo $USER
-                        git fetch https://github.com/eliyazsyed22/buchanancd-update.git
-                        git rebase https://github.com/eliyazsyed22/buchanancd-update.git
+                        //git fetch https://github.com/eliyazsyed22/buchanancd-update.git
+                        //git rebase https://github.com/eliyazsyed22/buchanancd-update.git
                         git add eks-deployment.yaml
                         git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'
                         """
