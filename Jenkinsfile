@@ -14,7 +14,7 @@ pipeline{
 
             steps{
                 script{
-                    withCredentials([gitUsernamePassword(credentialsId: 'newpat', gitToolName: 'Default')]) {
+                    withCredentials([gitUsernamePassword(credentialsId: 'newset', gitToolName: 'Default')]) {
                         sh 'cat eks-deployment.yaml'
                         sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                         sh "cat eks-deployment.yaml"
