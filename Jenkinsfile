@@ -26,6 +26,8 @@ pipeline{
                         echo $USER
                         git add eks-deployment.yaml
                         git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'
+                        git fetch origin
+                        git merge origin/main
                         """
                     withCredentials([gitUsernamePassword(credentialsId: 'classictoken', gitToolName: 'Default')]) {
                                         
