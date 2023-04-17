@@ -31,7 +31,7 @@ pipeline{
                         """
                     withCredentials([gitUsernamePassword(credentialsId: 'classictoken', gitToolName: 'Default')]) {
                                         
-                                        sh "git push https://github.com/eliyazsyed22/buchanancd-update.git main"
+                                        sh "git push https://github.com/eliyazsyed22/buchanancd-update.git test"
                                     }
 
                 }
