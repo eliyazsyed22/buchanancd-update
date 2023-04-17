@@ -20,8 +20,8 @@ pipeline{
                         sh """
                         git fetch origin
                         git merge origin/main
-                        git rebase origin/main
-                        git stash
+                        //git rebase origin/main
+                        //git stash
                         git config --global user.name "eliyazsyed22"
                         git config --global user.email "eliyazsyed22@gmail.com"
                         whoami
