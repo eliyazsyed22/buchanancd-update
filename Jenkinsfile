@@ -18,6 +18,9 @@ pipeline{
                         sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                         sh "cat eks-deployment.yaml"
                         sh """
+                        git fetch origin
+                        git merge origin/main
+                        git rebase origin/main
                         git config --global user.name "eliyazsyed22"
                         git config --global user.email "eliyazsyed22@gmail.com"
                         whoami
