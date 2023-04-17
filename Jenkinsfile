@@ -25,7 +25,7 @@ pipeline{
                         git add eks-deployment.yaml
                         git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'
                         """
-                    withCredentials([gitUsernamePassword(credentialsId: 'testtoken', gitToolName: 'Default')]) {
+                    withCredentials([gitUsernamePassword(credentialsId: 'classictoken', gitToolName: 'Default')]) {
                                         sh "git push https://github.com/eliyazsyed22/buchanancd-update.git main"
                                     }
 
