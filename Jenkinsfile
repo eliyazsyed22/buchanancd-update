@@ -27,16 +27,17 @@ pipeline{
                         //sh "git checkout main"
                         sh "git add eks-deployment.yaml"
                         sh "git commit -m 'Done by Jenkins Job update manifest: ${BUILD_ID}'"
+                        sh "git push https://github.com/eliyazsyed22/buchanancd-update.git main"
                         //sh "git remote set-url origin github.com/eliyazsyed22/buchanancd-update.git"
                         //sh "git remote -v"
                         //sh "git branch -a"
-                        //sh "git push -u origin HEAD:main"
+                        //sh "git push -u HEAD:main"
                         //sh "git push --set-upstream origin main"
                         //sh "git remote add origin https://github.com/eliyazsyed22/buchanancd-update.git"
                         //sh "git push --force https://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@github.com/eliyazsyed22/buchanancd-update.git HEAD:main"
                         //sh "git pull origin main"
                         //sh "git push main origin https://github.com/eliyazsyed22/buchanancd-update.git"
-                        sh "git push -u origin HEAD:main"
+                        
                     }
 
                            
