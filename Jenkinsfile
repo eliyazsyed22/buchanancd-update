@@ -19,7 +19,7 @@ pipeline{
                         sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                         sh "cat eks-deployment.yaml"
                         sh "git config --global user.name "eliyazsyed22""
-                        sh "git config --global user.email "eliyaz7134@gmail.com""
+                        sh "git config --global user.email "eliyaz7134""
                         //sh "git branch -a"
                         sh "whoami"
                         sh "echo $USER"
