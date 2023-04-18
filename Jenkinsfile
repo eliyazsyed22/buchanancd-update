@@ -49,7 +49,7 @@ pipeline{
 
             steps{
                 script{
-                   sh 'docker push ${APP_NAME}:v1.${IMAGE_TAG}'
+                   sh 'docker push ${APP_NAME}:${IMAGE_TAG}'
                 }
             }
         }
