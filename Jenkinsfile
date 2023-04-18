@@ -37,6 +37,22 @@ pipeline{
                 }
             }
         }
+         stage('Elastic Container Registry Login'){
+            
+            steps{
+                script{
+                   sh 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/p5u5p5h0'
+                }
+            }
+        }
+        stage('Docker Image Push to ECR'){
+
+            steps{
+                script{
+                   sh 'docker push ${APP_NAME}:v1.${IMAGE_TAG}'
+                }
+            }
+        }
     }       
 
 }
