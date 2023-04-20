@@ -17,7 +17,7 @@ pipeline{
                         sh 'cat eks-deployment.yaml'
                         //sh "sed -i 's+${APP_NAME}.*+${APP_NAME}:${BUILD_ID}+g' eks-deployment.yaml"
                         //sh "cat eks-deployment.yaml"
-                        sh """
+                        /*sh """
                         git fetch origin
                         git merge origin/main
                         git config --global user.name "eliyazsyed22"
@@ -32,7 +32,7 @@ pipeline{
                     withCredentials([gitUsernamePassword(credentialsId: 'classictoken', gitToolName: 'Default')]) {
                                         
                                         sh "git push https://github.com/eliyazsyed22/buchanancd-update.git HEAD:main"
-                                    }
+                                    }*/
 
                 }
             }
